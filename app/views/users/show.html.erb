@@ -1,14 +1,11 @@
-    <ul>
-  <li>
+<ul>
+
+      <%= gravatar_for @user %> <%= @user.name %>
   
-<%= gravatar_for @user %><%= @user.name %>
-</li>
   <li>
-
-<%= @user.email %>
-</li>
+      <%= @user.email %>
+  </li>
   <li>
-
-<%= @user.area %>
- </li>
+      <%= @user.area %>
+  </li>
 </ul>
