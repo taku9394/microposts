@@ -145,9 +145,10 @@ aside {
 
 /* microposts */
 
-.microposts {
+.microposts, .following_users, .follower_users {
   list-style: none;
   padding: 0;
+  
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
@@ -156,6 +157,17 @@ aside {
     margin-top: 5em;
     padding-top: 0;
   }
+  .micropost_count{
+    display: block;
+    margin-left: 60px;
+  }
+  
+  .counter{
+    display: block;
+    margin-left: 60px;
+  }
+  
+  
   .content {
     display: block;
     margin-left: 60px;
