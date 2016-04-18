@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def followers
-    @title = "Followers"
+    @title = "Follower"
     @user = User.find(params[:id])
     @follower_users = @user.follower_users.page(params[:page]).per(10)
   end
