@@ -5,8 +5,18 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.order(created_at: :desc).page(params[:page]).per(10)
-    @following_users = @user.following_users.all
-    @follower_users = @user.follower_users.all    
+  end
+  
+  def followings
+    @title = "Following"
+    @user = User.find(params[:id])
+    @following_users = @user.following_users.page(params[:page]).per(10)
+  end
+
+  def followers
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @follower_users = @user.follower_users.page(params[:page]).per(10)
   end
   
   def new
@@ -23,7 +33,7 @@ class UsersController < ApplicationController
     end
   end
   
- def edit
+  def edit
     @user = User.find(params[:id])
   end
 
@@ -36,17 +46,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def followings
-    @title = "Following"
-    @user = User.find(params[:id])
-    @following_users = @user.following_users.all
-  end
-
-  def followers
-    @title = "Followers"
-    @user = User.find(params[:id])
-    @follower_users = @user.follower_users.all
-  end
+  
   
   private
 
